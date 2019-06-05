@@ -1,0 +1,673 @@
+Analysis & Synthesis report for lab4
+Wed Jun 05 05:18:23 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |Lab4_140L|scctrl:scctrl|cKey
+  9. State Machine - |Lab4_140L|scctrl:scctrl|cState
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: scdp:scdp|regrce:u0
+ 14. Parameter Settings for User Entity Instance: scdp:scdp|regrce:u1
+ 15. Parameter Settings for User Entity Instance: scdp:scdp|regrce:u2
+ 16. Parameter Settings for User Entity Instance: scdp:scdp|regrce:msBitsi
+ 17. Parameter Settings for User Entity Instance: scdp:scdp|regrce:lsBitsi
+ 18. Parameter Settings for User Entity Instance: scdp:scdp|regrce:rxdataD
+ 19. Parameter Settings for User Entity Instance: scdp:scdp|regrce:rddataDV
+ 20. Parameter Settings for User Entity Instance: scdp:scdp|regrce:k0l
+ 21. Parameter Settings for User Entity Instance: scdp:scdp|regrce:k0h
+ 22. Parameter Settings for User Entity Instance: scdp:scdp|regrce:k1l
+ 23. Parameter Settings for User Entity Instance: scdp:scdp|regrce:k1h
+ 24. Parameter Settings for User Entity Instance: scdp:scdp|regrce:k2l
+ 25. Parameter Settings for User Entity Instance: scdp:scdp|regrce:k2h
+ 26. Parameter Settings for User Entity Instance: scdp:scdp|regrce:k3l
+ 27. Parameter Settings for User Entity Instance: scdp:scdp|regrce:k3h
+ 28. Parameter Settings for User Entity Instance: scdp:scdp|lfsr:lfsrInst|regrce:lfsr
+ 29. Parameter Settings for User Entity Instance: scctrl:scctrl|regrce:ldk
+ 30. Port Connectivity Checks: "scctrl:scctrl|regrce:ldk"
+ 31. Port Connectivity Checks: "scctrl:scctrl"
+ 32. Port Connectivity Checks: "decodeKeysL4:dk"
+ 33. Port Connectivity Checks: "scdp:scdp|regrce:rddataDV"
+ 34. Port Connectivity Checks: "scdp:scdp|regrce:rxdataD"
+ 35. Port Connectivity Checks: "scdp:scdp|printable:pinst1"
+ 36. Port Connectivity Checks: "scdp:scdp|printable:pinst0"
+ 37. Analysis & Synthesis Messages
+ 38. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Wed Jun 05 05:18:23 2019       ;
+; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name               ; lab4                                        ;
+; Top-level Entity Name       ; Lab4_140L                                   ;
+; Family                      ; MAX V                                       ;
+; Total logic elements        ; 312                                         ;
+; Total pins                  ; 26                                          ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 5M2210ZF324I5      ;                    ;
+; Top-level entity name                                            ; Lab4_140L          ; lab4               ;
+; Family name                                                      ; MAX V              ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                       ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                         ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
+; regrce.v                         ; yes             ; User Verilog HDL File  ; D:/PhotonUser/Lab/junkai/cse140l/Lab4/regrce.v       ;         ;
+; printable.v                      ; yes             ; User Verilog HDL File  ; D:/PhotonUser/Lab/junkai/cse140l/Lab4/printable.v    ;         ;
+; lfsr.v                           ; yes             ; User Verilog HDL File  ; D:/PhotonUser/Lab/junkai/cse140l/Lab4/lfsr.v         ;         ;
+; Lab4_140L.v                      ; yes             ; User Verilog HDL File  ; D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v    ;         ;
+; decodeKeysL4.v                   ; yes             ; User Verilog HDL File  ; D:/PhotonUser/Lab/junkai/cse140l/Lab4/decodeKeysL4.v ;         ;
+; bin2AsciiHex.v                   ; yes             ; User Verilog HDL File  ; D:/PhotonUser/Lab/junkai/cse140l/Lab4/bin2AsciiHex.v ;         ;
+; asciiHex2Bin.v                   ; yes             ; User Verilog HDL File  ; D:/PhotonUser/Lab/junkai/cse140l/Lab4/asciiHex2Bin.v ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 312   ;
+;     -- Combinational with no register       ; 185   ;
+;     -- Register only                        ; 44    ;
+;     -- Combinational with a register        ; 83    ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 181   ;
+;     -- 3 input functions                    ; 49    ;
+;     -- 2 input functions                    ; 38    ;
+;     -- 1 input functions                    ; 0     ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 312   ;
+;     -- arithmetic mode                      ; 0     ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 46    ;
+;     -- asynchronous clear/load mode         ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 127   ;
+; I/O pins                                    ; 26    ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 127   ;
+; Total fan-out                               ; 1261  ;
+; Average fan-out                             ; 3.73  ;
++---------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                            ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------+--------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                            ; Entity Name  ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------+--------------+--------------+
+; |Lab4_140L                 ; 312 (0)     ; 127          ; 0          ; 26   ; 0            ; 185 (0)      ; 44 (0)            ; 83 (0)           ; 0 (0)           ; 0 (0)      ; |Lab4_140L                                     ; Lab4_140L    ; work         ;
+;    |decodeKeysL4:dk|       ; 16 (16)     ; 0            ; 0          ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Lab4_140L|decodeKeysL4:dk                     ; decodeKeysL4 ; work         ;
+;    |scctrl:scctrl|         ; 60 (52)     ; 30           ; 0          ; 0    ; 0            ; 30 (30)      ; 0 (0)             ; 30 (22)          ; 0 (0)           ; 0 (0)      ; |Lab4_140L|scctrl:scctrl                       ; scctrl       ; work         ;
+;       |regrce:ldk|         ; 8 (8)       ; 8            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; 0 (0)           ; 0 (0)      ; |Lab4_140L|scctrl:scctrl|regrce:ldk            ; regrce       ; work         ;
+;    |scdp:scdp|             ; 236 (88)    ; 97           ; 0          ; 0    ; 0            ; 139 (88)     ; 44 (0)            ; 53 (0)           ; 0 (0)           ; 0 (0)      ; |Lab4_140L|scdp:scdp                           ; scdp         ; work         ;
+;       |asciiHex2Bin:a2b|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Lab4_140L|scdp:scdp|asciiHex2Bin:a2b          ; asciiHex2Bin ; work         ;
+;       |bin2AsciiHex:b2A|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Lab4_140L|scdp:scdp|bin2AsciiHex:b2A          ; bin2AsciiHex ; work         ;
+;       |bin2AsciiHex:b2a0|  ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Lab4_140L|scdp:scdp|bin2AsciiHex:b2a0         ; bin2AsciiHex ; work         ;
+;       |bin2AsciiHex:b2a1|  ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Lab4_140L|scdp:scdp|bin2AsciiHex:b2a1         ; bin2AsciiHex ; work         ;
+;       |lfsr:lfsrInst|      ; 42 (8)      ; 31           ; 0          ; 0    ; 0            ; 11 (8)       ; 0 (0)             ; 31 (0)           ; 0 (0)           ; 0 (0)      ; |Lab4_140L|scdp:scdp|lfsr:lfsrInst             ; lfsr         ; work         ;
+;          |regrce:lfsr|     ; 34 (34)     ; 31           ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 31 (31)          ; 0 (0)           ; 0 (0)      ; |Lab4_140L|scdp:scdp|lfsr:lfsrInst|regrce:lfsr ; regrce       ; work         ;
+;       |printable:pinst0|   ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Lab4_140L|scdp:scdp|printable:pinst0          ; printable    ; work         ;
+;       |printable:pinst1|   ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Lab4_140L|scdp:scdp|printable:pinst1          ; printable    ; work         ;
+;       |regrce:k0h|         ; 5 (5)       ; 4            ; 0          ; 0    ; 0            ; 1 (1)        ; 4 (4)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Lab4_140L|scdp:scdp|regrce:k0h                ; regrce       ; work         ;
+;       |regrce:k0l|         ; 6 (6)       ; 4            ; 0          ; 0    ; 0            ; 2 (2)        ; 4 (4)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Lab4_140L|scdp:scdp|regrce:k0l                ; regrce       ; work         ;
+;       |regrce:k1h|         ; 5 (5)       ; 4            ; 0          ; 0    ; 0            ; 1 (1)        ; 4 (4)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Lab4_140L|scdp:scdp|regrce:k1h                ; regrce       ; work         ;
+;       |regrce:k1l|         ; 8 (8)       ; 4            ; 0          ; 0    ; 0            ; 4 (4)        ; 4 (4)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Lab4_140L|scdp:scdp|regrce:k1l                ; regrce       ; work         ;
+;       |regrce:k2h|         ; 5 (5)       ; 4            ; 0          ; 0    ; 0            ; 1 (1)        ; 4 (4)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Lab4_140L|scdp:scdp|regrce:k2h                ; regrce       ; work         ;
+;       |regrce:k2l|         ; 5 (5)       ; 4            ; 0          ; 0    ; 0            ; 1 (1)        ; 4 (4)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Lab4_140L|scdp:scdp|regrce:k2l                ; regrce       ; work         ;
+;       |regrce:k3h|         ; 5 (5)       ; 4            ; 0          ; 0    ; 0            ; 1 (1)        ; 4 (4)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Lab4_140L|scdp:scdp|regrce:k3h                ; regrce       ; work         ;
+;       |regrce:k3l|         ; 5 (5)       ; 4            ; 0          ; 0    ; 0            ; 1 (1)        ; 4 (4)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Lab4_140L|scdp:scdp|regrce:k3l                ; regrce       ; work         ;
+;       |regrce:lsBitsi|     ; 7 (7)       ; 7            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 7 (7)            ; 0 (0)           ; 0 (0)      ; |Lab4_140L|scdp:scdp|regrce:lsBitsi            ; regrce       ; work         ;
+;       |regrce:msBitsi|     ; 7 (7)       ; 6            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 6 (6)            ; 0 (0)           ; 0 (0)      ; |Lab4_140L|scdp:scdp|regrce:msBitsi            ; regrce       ; work         ;
+;       |regrce:rddataDV|    ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Lab4_140L|scdp:scdp|regrce:rddataDV           ; regrce       ; work         ;
+;       |regrce:rxdataD|     ; 4 (4)       ; 4            ; 0          ; 0    ; 0            ; 0 (0)        ; 4 (4)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Lab4_140L|scdp:scdp|regrce:rxdataD            ; regrce       ; work         ;
+;       |regrce:u0|          ; 9 (9)       ; 4            ; 0          ; 0    ; 0            ; 5 (5)        ; 4 (4)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Lab4_140L|scdp:scdp|regrce:u0                 ; regrce       ; work         ;
+;       |regrce:u1|          ; 8 (8)       ; 4            ; 0          ; 0    ; 0            ; 4 (4)        ; 4 (4)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Lab4_140L|scdp:scdp|regrce:u1                 ; regrce       ; work         ;
+;       |regrce:u2|          ; 9 (9)       ; 8            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 8 (8)            ; 0 (0)           ; 0 (0)      ; |Lab4_140L|scdp:scdp|regrce:u2                 ; regrce       ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------+--------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------+
+; State Machine - |Lab4_140L|scctrl:scctrl|cKey                                                               ;
++----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
+; Name     ; cKey.K0l ; cKey.K0h ; cKey.K1l ; cKey.K1h ; cKey.K2l ; cKey.K2h ; cKey.K3l ; cKey.K3h ; cKey.KOF ;
++----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
+; cKey.K3h ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ;
+; cKey.K3l ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 1        ; 0        ;
+; cKey.K2h ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 1        ; 0        ;
+; cKey.K2l ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 1        ; 0        ;
+; cKey.K1h ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 1        ; 0        ;
+; cKey.K1l ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ;
+; cKey.K0h ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ;
+; cKey.K0l ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ;
+; cKey.KOF ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 1        ;
++----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Lab4_140L|scctrl:scctrl|cState                                                                                                                                                            ;
++----------------+------------+---------------+------------+------------+------------+------------+------------+----------------+----------------+---------------+---------------+------------+--------------+
+; Name           ; cState.PTB ; cState.PTLFSR ; cState.PTK ; cState.LDK ; cState.NB2 ; cState.NB1 ; cState.DEC ; cState.LDLSBIT ; cState.LDMSBIT ; cState.LDEBIT ; cState.LDBYTE ; cState.ENC ; cState.START ;
++----------------+------------+---------------+------------+------------+------------+------------+------------+----------------+----------------+---------------+---------------+------------+--------------+
+; cState.START   ; 0          ; 0             ; 0          ; 0          ; 0          ; 0          ; 0          ; 0              ; 0              ; 0             ; 0             ; 0          ; 0            ;
+; cState.ENC     ; 0          ; 0             ; 0          ; 0          ; 0          ; 0          ; 0          ; 0              ; 0              ; 0             ; 0             ; 1          ; 1            ;
+; cState.LDBYTE  ; 0          ; 0             ; 0          ; 0          ; 0          ; 0          ; 0          ; 0              ; 0              ; 0             ; 1             ; 0          ; 1            ;
+; cState.LDEBIT  ; 0          ; 0             ; 0          ; 0          ; 0          ; 0          ; 0          ; 0              ; 0              ; 1             ; 0             ; 0          ; 1            ;
+; cState.LDMSBIT ; 0          ; 0             ; 0          ; 0          ; 0          ; 0          ; 0          ; 0              ; 1              ; 0             ; 0             ; 0          ; 1            ;
+; cState.LDLSBIT ; 0          ; 0             ; 0          ; 0          ; 0          ; 0          ; 0          ; 1              ; 0              ; 0             ; 0             ; 0          ; 1            ;
+; cState.DEC     ; 0          ; 0             ; 0          ; 0          ; 0          ; 0          ; 1          ; 0              ; 0              ; 0             ; 0             ; 0          ; 1            ;
+; cState.NB1     ; 0          ; 0             ; 0          ; 0          ; 0          ; 1          ; 0          ; 0              ; 0              ; 0             ; 0             ; 0          ; 1            ;
+; cState.NB2     ; 0          ; 0             ; 0          ; 0          ; 1          ; 0          ; 0          ; 0              ; 0              ; 0             ; 0             ; 0          ; 1            ;
+; cState.LDK     ; 0          ; 0             ; 0          ; 1          ; 0          ; 0          ; 0          ; 0              ; 0              ; 0             ; 0             ; 0          ; 1            ;
+; cState.PTK     ; 0          ; 0             ; 1          ; 0          ; 0          ; 0          ; 0          ; 0              ; 0              ; 0             ; 0             ; 0          ; 1            ;
+; cState.PTLFSR  ; 0          ; 1             ; 0          ; 0          ; 0          ; 0          ; 0          ; 0              ; 0              ; 0             ; 0             ; 0          ; 1            ;
+; cState.PTB     ; 1          ; 0             ; 0          ; 0          ; 0          ; 0          ; 0          ; 0              ; 0              ; 0             ; 0             ; 0          ; 1            ;
++----------------+------------+---------------+------------+------------+------------+------------+------------+----------------+----------------+---------------+---------------+------------+--------------+
+
+
++------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                 ;
++----------------------------------------+-------------------------------------------+
+; Register name                          ; Reason for Removal                        ;
++----------------------------------------+-------------------------------------------+
+; scdp:scdp|regrce:msBitsi|q[5]          ; Merged with scdp:scdp|regrce:lsBitsi|q[5] ;
+; scdp:scdp|regrce:msBitsi|q[7]          ; Merged with scdp:scdp|regrce:lsBitsi|q[7] ;
+; scdp:scdp|regrce:lsBitsi|q[7]          ; Stuck at GND due to stuck port data_in    ;
+; scctrl:scctrl|cKey~2                   ; Lost fanout                               ;
+; scctrl:scctrl|cKey~3                   ; Lost fanout                               ;
+; scctrl:scctrl|cKey~4                   ; Lost fanout                               ;
+; scctrl:scctrl|cState~2                 ; Lost fanout                               ;
+; scctrl:scctrl|cState~3                 ; Lost fanout                               ;
+; scctrl:scctrl|cState~4                 ; Lost fanout                               ;
+; scctrl:scctrl|cState~5                 ; Lost fanout                               ;
+; Total Number of Removed Registers = 10 ;                                           ;
++----------------------------------------+-------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 127   ;
+; Number of registers using Synchronous Clear  ; 46    ;
+; Number of registers using Synchronous Load   ; 2     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 84    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |Lab4_140L|scdp:scdp|regrce:msBitsi|q[0]             ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Lab4_140L|scdp:scdp|regrce:u1|q[3]                  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Lab4_140L|scdp:scdp|regrce:u2|q[2]                  ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Lab4_140L|scdp:scdp|regrce:u0|q[0]                  ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Lab4_140L|scdp:scdp|regrce:k0l|q[1]                 ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Lab4_140L|scdp:scdp|regrce:k0h|q[1]                 ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Lab4_140L|scdp:scdp|regrce:k1l|q[2]                 ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Lab4_140L|scdp:scdp|regrce:k1h|q[3]                 ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Lab4_140L|scdp:scdp|regrce:k2l|q[1]                 ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Lab4_140L|scdp:scdp|regrce:k2h|q[1]                 ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Lab4_140L|scdp:scdp|regrce:k3l|q[2]                 ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Lab4_140L|scdp:scdp|regrce:k3h|q[0]                 ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |Lab4_140L|scctrl:scctrl|regrce:ldk|q[7]             ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |Lab4_140L|scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[16] ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |Lab4_140L|scdp:scdp|L4_tx_data[4]                   ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |Lab4_140L|scdp:scdp|L4_tx_data[0]                   ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Lab4_140L|scctrl:scctrl|cKey                        ;
+; 17:1               ; 3 bits    ; 33 LEs        ; 30 LEs               ; 3 LEs                  ; No         ; |Lab4_140L|scdp:scdp|comb                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: scdp:scdp|regrce:u0 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; WIDTH          ; 4     ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: scdp:scdp|regrce:u1 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; WIDTH          ; 4     ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: scdp:scdp|regrce:u2 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; WIDTH          ; 8     ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: scdp:scdp|regrce:msBitsi ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; WIDTH          ; 8     ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: scdp:scdp|regrce:lsBitsi ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; WIDTH          ; 8     ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: scdp:scdp|regrce:rxdataD ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; WIDTH          ; 4     ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: scdp:scdp|regrce:rddataDV ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; WIDTH          ; 1     ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: scdp:scdp|regrce:k0l ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; WIDTH          ; 4     ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: scdp:scdp|regrce:k0h ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; WIDTH          ; 4     ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: scdp:scdp|regrce:k1l ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; WIDTH          ; 4     ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: scdp:scdp|regrce:k1h ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; WIDTH          ; 4     ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: scdp:scdp|regrce:k2l ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; WIDTH          ; 4     ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: scdp:scdp|regrce:k2h ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; WIDTH          ; 4     ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: scdp:scdp|regrce:k3l ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; WIDTH          ; 4     ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: scdp:scdp|regrce:k3h ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; WIDTH          ; 4     ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: scdp:scdp|lfsr:lfsrInst|regrce:lfsr ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; WIDTH          ; 31    ; Signed Integer                                          ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: scctrl:scctrl|regrce:ldk ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; WIDTH          ; 8     ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "scctrl:scctrl|regrce:ldk"                                                                                                                                                           ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                                                                                                            ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; ce     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; ce[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "scctrl:scctrl"                                                                                                                              ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; dEsc ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Port Connectivity Checks: "decodeKeysL4:dk"         ;
++--------+--------+----------+------------------------+
+; Port   ; Type   ; Severity ; Details                ;
++--------+--------+----------+------------------------+
+; de_esc ; Output ; Info     ; Explicitly unconnected ;
++--------+--------+----------+------------------------+
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "scdp:scdp|regrce:rddataDV" ;
++------+-------+----------+-----------------------------+
+; Port ; Type  ; Severity ; Details                     ;
++------+-------+----------+-----------------------------+
+; ce   ; Input ; Info     ; Stuck at VCC                ;
++------+-------+----------+-----------------------------+
+
+
++------------------------------------------------------+
+; Port Connectivity Checks: "scdp:scdp|regrce:rxdataD" ;
++------+-------+----------+----------------------------+
+; Port ; Type  ; Severity ; Details                    ;
++------+-------+----------+----------------------------+
+; ce   ; Input ; Info     ; Stuck at VCC               ;
++------+-------+----------+----------------------------+
+
+
++--------------------------------------------------------+
+; Port Connectivity Checks: "scdp:scdp|printable:pinst1" ;
++-------+--------+----------+----------------------------+
+; Port  ; Type   ; Severity ; Details                    ;
++-------+--------+----------+----------------------------+
+; pChar ; Output ; Info     ; Explicitly unconnected     ;
++-------+--------+----------+----------------------------+
+
+
++--------------------------------------------------------+
+; Port Connectivity Checks: "scdp:scdp|printable:pinst0" ;
++--------+--------+----------+---------------------------+
+; Port   ; Type   ; Severity ; Details                   ;
++--------+--------+----------+---------------------------+
+; pValid ; Output ; Info     ; Explicitly unconnected    ;
++--------+--------+----------+---------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Wed Jun 05 05:17:58 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab4 -c lab4
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20029): Only one processor detected - disabling parallel compilation
+Info (12021): Found 3 design units, including 3 entities, in source file uarttxbuf.v
+    Info (12023): Found entity 1: uartTxBuf File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/uarttxbuf.v Line: 13
+    Info (12023): Found entity 2: emitcrlf_fsm File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/uarttxbuf.v Line: 173
+    Info (12023): Found entity 3: tx_fsm File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/uarttxbuf.v Line: 242
+Info (12021): Found 1 design units, including 1 entities, in source file top_sft.v
+    Info (12023): Found entity 1: top_sft File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/top_sft.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tb_sft.v
+    Info (12023): Found entity 1: tb_sft File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/tb_sft.v Line: 35
+Info (12021): Found 1 design units, including 1 entities, in source file regrce.v
+    Info (12023): Found entity 1: regrce File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/regrce.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file printable.v
+    Info (12023): Found entity 1: printable File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/printable.v Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file lfsr.v
+    Info (12023): Found entity 1: lfsr File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/lfsr.v Line: 1
+Info (12021): Found 3 design units, including 3 entities, in source file latticehx1k.v
+    Info (12023): Found entity 1: resetGen File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/latticehx1k.v Line: 64
+    Info (12023): Found entity 2: latticehx1k File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/latticehx1k.v Line: 97
+    Info (12023): Found entity 3: N_bit_counter File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/latticehx1k.v Line: 318
+Info (12021): Found 3 design units, including 3 entities, in source file lab4_140l.v
+    Info (12023): Found entity 1: Lab4_140L File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v Line: 1
+    Info (12023): Found entity 2: scdp File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v Line: 125
+    Info (12023): Found entity 3: scctrl File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v Line: 283
+Info (12021): Found 1 design units, including 1 entities, in source file fake_pll.v
+    Info (12023): Found entity 1: fake_pll File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/fake_pll.v Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file fake_fifo.v
+    Info (12023): Found entity 1: fifo File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/fake_fifo.v Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file fake_buart.v
+    Info (12023): Found entity 1: fake_buart File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/fake_buart.v Line: 30
+Info (12021): Found 1 design units, including 1 entities, in source file dispstring.v
+    Info (12023): Found entity 1: dispString File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/dispString.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file decodekeysl4.v
+    Info (12023): Found entity 1: decodeKeysL4 File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/decodeKeysL4.v Line: 36
+Info (12021): Found 1 design units, including 1 entities, in source file bin2asciihex.v
+    Info (12023): Found entity 1: bin2AsciiHex File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/bin2AsciiHex.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file asciihex2bin.v
+    Info (12023): Found entity 1: asciiHex2Bin File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/asciiHex2Bin.v Line: 6
+Info (12127): Elaborating entity "Lab4_140L" for the top level hierarchy
+Info (12128): Elaborating entity "scdp" for hierarchy "scdp:scdp" File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v Line: 53
+Info (12128): Elaborating entity "asciiHex2Bin" for hierarchy "scdp:scdp|asciiHex2Bin:a2b" File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v Line: 161
+Info (12128): Elaborating entity "regrce" for hierarchy "scdp:scdp|regrce:u0" File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v Line: 168
+Info (12128): Elaborating entity "printable" for hierarchy "scdp:scdp|printable:pinst0" File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v Line: 174
+Info (12128): Elaborating entity "regrce" for hierarchy "scdp:scdp|regrce:u2" File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v Line: 182
+Info (12128): Elaborating entity "bin2AsciiHex" for hierarchy "scdp:scdp|bin2AsciiHex:b2a0" File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v Line: 200
+Info (12128): Elaborating entity "regrce" for hierarchy "scdp:scdp|regrce:rddataDV" File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v Line: 217
+Info (12128): Elaborating entity "lfsr" for hierarchy "scdp:scdp|lfsr:lfsrInst" File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v Line: 254
+Info (12128): Elaborating entity "regrce" for hierarchy "scdp:scdp|lfsr:lfsrInst|regrce:lfsr" File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/lfsr.v Line: 20
+Info (12128): Elaborating entity "decodeKeysL4" for hierarchy "decodeKeysL4:dk" File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v Line: 82
+Warning (10036): Verilog HDL or VHDL warning at decodeKeysL4.v(61): object "is_b7_1" assigned a value but never read File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/decodeKeysL4.v Line: 61
+Info (12128): Elaborating entity "scctrl" for hierarchy "scctrl:scctrl" File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v Line: 113
+Info (10264): Verilog HDL Case Statement information at Lab4_140L.v(518): all case item expressions in this case statement are onehot File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v Line: 518
+Info (10264): Verilog HDL Case Statement information at Lab4_140L.v(586): all case item expressions in this case statement are onehot File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v Line: 586
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "L4_tx_data[7]" is stuck at GND File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v Line: 7
+    Warning (13410): Pin "L4_led[0]" is stuck at GND File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v Line: 10
+    Warning (13410): Pin "L4_led[1]" is stuck at GND File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v Line: 10
+    Warning (13410): Pin "L4_led[2]" is stuck at GND File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v Line: 10
+    Warning (13410): Pin "L4_led[3]" is stuck at GND File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v Line: 10
+    Warning (13410): Pin "L4_led[4]" is stuck at GND File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v Line: 10
+Info (17049): 7 registers lost all their fanouts during netlist optimizations.
+Info (21057): Implemented 338 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
+    Info (21059): Implemented 15 output pins
+    Info (21061): Implemented 312 logic cells
+Info (144001): Generated suppressed messages file D:/PhotonUser/Lab/junkai/cse140l/Lab4/output_files/lab4.map.smsg
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
+    Info: Peak virtual memory: 560 megabytes
+    Info: Processing ended: Wed Jun 05 05:18:23 2019
+    Info: Elapsed time: 00:00:25
+    Info: Total CPU time (on all processors): 00:00:38
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/PhotonUser/Lab/junkai/cse140l/Lab4/output_files/lab4.map.smsg.
+
+

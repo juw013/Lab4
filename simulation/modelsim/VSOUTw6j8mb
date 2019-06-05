@@ -1,0 +1,60 @@
+vsim work.top_sft 
+Start time: 17:08:48 on Jun 03,2019
+Loading work.top_sft
+Loading work.latticehx1k
+Loading work.fake_pll
+Loading work.uartTxBuf
+Loading work.fifo
+Loading work.tx_fsm
+Loading work.emitcrlf_fsm
+Loading work.fake_buart
+Loading work.resetGen
+Loading work.N_bit_counter
+Loading work.Lab4_140L
+Loading work.scdp
+Loading work.asciiHex2Bin
+Loading work.regrce
+Loading work.printable
+Loading work.bin2AsciiHex
+Loading work.lfsr
+Loading work.decodeKeysL4
+Loading work.scctrl
+Loading work.tb_sft
+** Warning: (vsim-3015) D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v(298): [PCDPC] - Port size (8) does not match connection size (4) for port 'asciiHex'. The port definition is at: D:/PhotonUser/Lab/junkai/cse140l/Lab4/bin2AsciiHex.v(7).
+   Time: 0 ps  Iteration: 0  Instance: /top_sft/latticehx1k/Lab_UT/scdp/b2key31 File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/bin2AsciiHex.v
+** Warning: (vsim-3015) D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v(299): [PCDPC] - Port size (8) does not match connection size (4) for port 'asciiHex'. The port definition is at: D:/PhotonUser/Lab/junkai/cse140l/Lab4/bin2AsciiHex.v(7).
+   Time: 0 ps  Iteration: 0  Instance: /top_sft/latticehx1k/Lab_UT/scdp/b2key30 File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/bin2AsciiHex.v
+** Warning: (vsim-3015) D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v(300): [PCDPC] - Port size (8) does not match connection size (4) for port 'asciiHex'. The port definition is at: D:/PhotonUser/Lab/junkai/cse140l/Lab4/bin2AsciiHex.v(7).
+   Time: 0 ps  Iteration: 0  Instance: /top_sft/latticehx1k/Lab_UT/scdp/b2key21 File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/bin2AsciiHex.v
+** Warning: (vsim-3015) D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v(301): [PCDPC] - Port size (8) does not match connection size (4) for port 'asciiHex'. The port definition is at: D:/PhotonUser/Lab/junkai/cse140l/Lab4/bin2AsciiHex.v(7).
+   Time: 0 ps  Iteration: 0  Instance: /top_sft/latticehx1k/Lab_UT/scdp/b2key20 File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/bin2AsciiHex.v
+** Warning: (vsim-3015) D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v(302): [PCDPC] - Port size (8) does not match connection size (4) for port 'asciiHex'. The port definition is at: D:/PhotonUser/Lab/junkai/cse140l/Lab4/bin2AsciiHex.v(7).
+   Time: 0 ps  Iteration: 0  Instance: /top_sft/latticehx1k/Lab_UT/scdp/b2key11 File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/bin2AsciiHex.v
+** Warning: (vsim-3015) D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v(303): [PCDPC] - Port size (8) does not match connection size (4) for port 'asciiHex'. The port definition is at: D:/PhotonUser/Lab/junkai/cse140l/Lab4/bin2AsciiHex.v(7).
+   Time: 0 ps  Iteration: 0  Instance: /top_sft/latticehx1k/Lab_UT/scdp/b2key10 File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/bin2AsciiHex.v
+** Warning: (vsim-3015) D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v(304): [PCDPC] - Port size (8) does not match connection size (4) for port 'asciiHex'. The port definition is at: D:/PhotonUser/Lab/junkai/cse140l/Lab4/bin2AsciiHex.v(7).
+   Time: 0 ps  Iteration: 0  Instance: /top_sft/latticehx1k/Lab_UT/scdp/b2key01 File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/bin2AsciiHex.v
+** Warning: (vsim-3015) D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v(305): [PCDPC] - Port size (8) does not match connection size (4) for port 'asciiHex'. The port definition is at: D:/PhotonUser/Lab/junkai/cse140l/Lab4/bin2AsciiHex.v(7).
+   Time: 0 ps  Iteration: 0  Instance: /top_sft/latticehx1k/Lab_UT/scdp/b2key00 File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/bin2AsciiHex.v
+** Warning: (vsim-3015) D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v(307): [PCDPC] - Port size (8) does not match connection size (4) for port 'asciiHex'. The port definition is at: D:/PhotonUser/Lab/junkai/cse140l/Lab4/bin2AsciiHex.v(7).
+   Time: 0 ps  Iteration: 0  Instance: /top_sft/latticehx1k/Lab_UT/scdp/b2LFSR7 File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/bin2AsciiHex.v
+** Warning: (vsim-3015) D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v(308): [PCDPC] - Port size (8) does not match connection size (4) for port 'asciiHex'. The port definition is at: D:/PhotonUser/Lab/junkai/cse140l/Lab4/bin2AsciiHex.v(7).
+   Time: 0 ps  Iteration: 0  Instance: /top_sft/latticehx1k/Lab_UT/scdp/b2LFSR6 File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/bin2AsciiHex.v
+** Warning: (vsim-3015) D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v(309): [PCDPC] - Port size (8) does not match connection size (4) for port 'asciiHex'. The port definition is at: D:/PhotonUser/Lab/junkai/cse140l/Lab4/bin2AsciiHex.v(7).
+   Time: 0 ps  Iteration: 0  Instance: /top_sft/latticehx1k/Lab_UT/scdp/b2LFSR5 File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/bin2AsciiHex.v
+** Warning: (vsim-3015) D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v(310): [PCDPC] - Port size (8) does not match connection size (4) for port 'asciiHex'. The port definition is at: D:/PhotonUser/Lab/junkai/cse140l/Lab4/bin2AsciiHex.v(7).
+   Time: 0 ps  Iteration: 0  Instance: /top_sft/latticehx1k/Lab_UT/scdp/b2LFSR4 File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/bin2AsciiHex.v
+** Warning: (vsim-3015) D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v(311): [PCDPC] - Port size (8) does not match connection size (4) for port 'asciiHex'. The port definition is at: D:/PhotonUser/Lab/junkai/cse140l/Lab4/bin2AsciiHex.v(7).
+   Time: 0 ps  Iteration: 0  Instance: /top_sft/latticehx1k/Lab_UT/scdp/b2LFSR3 File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/bin2AsciiHex.v
+** Warning: (vsim-3015) D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v(312): [PCDPC] - Port size (8) does not match connection size (4) for port 'asciiHex'. The port definition is at: D:/PhotonUser/Lab/junkai/cse140l/Lab4/bin2AsciiHex.v(7).
+   Time: 0 ps  Iteration: 0  Instance: /top_sft/latticehx1k/Lab_UT/scdp/b2LFSR2 File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/bin2AsciiHex.v
+** Warning: (vsim-3015) D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v(313): [PCDPC] - Port size (8) does not match connection size (4) for port 'asciiHex'. The port definition is at: D:/PhotonUser/Lab/junkai/cse140l/Lab4/bin2AsciiHex.v(7).
+   Time: 0 ps  Iteration: 0  Instance: /top_sft/latticehx1k/Lab_UT/scdp/b2LFSR1 File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/bin2AsciiHex.v
+** Warning: (vsim-3015) D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v(314): [PCDPC] - Port size (8) does not match connection size (4) for port 'asciiHex'. The port definition is at: D:/PhotonUser/Lab/junkai/cse140l/Lab4/bin2AsciiHex.v(7).
+   Time: 0 ps  Iteration: 0  Instance: /top_sft/latticehx1k/Lab_UT/scdp/b2LFSR0 File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/bin2AsciiHex.v
+** Warning: (vsim-3015) D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v(82): [PCDPC] - Port size (1) does not match connection size (8) for port 'bu_rx_data'. The port definition is at: D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v(324).
+   Time: 0 ps  Iteration: 0  Instance: /top_sft/latticehx1k/Lab_UT/scctrl File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v
+L12345678Eabcd!L12345678Df0c0276cb0** Note: $finish    : D:/PhotonUser/Lab/junkai/cse140l/Lab4/tb_sft.v(246)
+   Time: 25240 ps  Iteration: 1  Instance: /top_sft/tb_sft
+** Fatal: (vsim-VCD-8109) Unable to write more data to VCD file "lab4.vcd"
+   Time: 42550180 ps  Iteration: 2  Instance: /top_sft/tb_sft File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/tb_sft.v

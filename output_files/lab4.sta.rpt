@@ -1,0 +1,523 @@
+Timing Analyzer report for lab4
+Wed Jun 05 03:30:15 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'clk'
+ 12. Hold: 'clk'
+ 13. Setup Transfers
+ 14. Hold Transfers
+ 15. Report TCCS
+ 16. Report RSKM
+ 17. Unconstrained Paths Summary
+ 18. Clock Status Summary
+ 19. Unconstrained Input Ports
+ 20. Unconstrained Output Ports
+ 21. Unconstrained Input Ports
+ 22. Unconstrained Output Ports
+ 23. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                     ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                              ;
+; Revision Name         ; lab4                                                ;
+; Device Family         ; MAX V                                               ;
+; Device Name           ; 5M2210ZF324I5                                       ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Slow Model                                          ;
+; Rise/Fall Delays      ; Unavailable                                         ;
++-----------------------+-----------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++--------------------------------------------------+
+; Fmax Summary                                     ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 131.53 MHz ; 131.53 MHz      ; clk        ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Setup Summary                  ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -6.603 ; -571.485      ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Hold Summary                  ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 1.385 ; 0.000         ;
++-------+-------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++--------------------------------+
+; Minimum Pulse Width Summary    ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -2.289 ; -2.289        ;
++-------+--------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'clk'                                                                                                                                                         ;
++--------+-------------------------------------------+-------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                 ; To Node                                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------------------+-------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -6.603 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[1]  ; scdp:scdp|regrce:lsBitsi|q[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 7.270      ;
+; -6.463 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[25] ; scdp:scdp|regrce:lsBitsi|q[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 7.130      ;
+; -6.421 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[12] ; scdp:scdp|regrce:msBitsi|q[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 7.088      ;
+; -6.308 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[16] ; scdp:scdp|regrce:lsBitsi|q[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.975      ;
+; -6.285 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[9]  ; scdp:scdp|regrce:lsBitsi|q[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.952      ;
+; -6.279 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[16] ; scdp:scdp|regrce:lsBitsi|q[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.946      ;
+; -6.115 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[1]  ; scdp:scdp|regrce:lsBitsi|q[0]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.782      ;
+; -6.114 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[1]  ; scdp:scdp|regrce:lsBitsi|q[3]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.781      ;
+; -6.049 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[4]  ; scdp:scdp|regrce:msBitsi|q[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.716      ;
+; -5.996 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[30] ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.663      ;
+; -5.989 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[26] ; scdp:scdp|regrce:lsBitsi|q[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.656      ;
+; -5.975 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[25] ; scdp:scdp|regrce:lsBitsi|q[0]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.642      ;
+; -5.974 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[25] ; scdp:scdp|regrce:lsBitsi|q[3]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.641      ;
+; -5.963 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[13] ; scdp:scdp|regrce:msBitsi|q[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.630      ;
+; -5.946 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[1]  ; scdp:scdp|regrce:lsBitsi|q[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.613      ;
+; -5.919 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[8]  ; scdp:scdp|regrce:lsBitsi|q[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.586      ;
+; -5.915 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[17] ; scdp:scdp|regrce:lsBitsi|q[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.582      ;
+; -5.910 ; scctrl:scctrl|cState.LDK                  ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[26] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.577      ;
+; -5.910 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[13] ; scdp:scdp|regrce:msBitsi|q[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.577      ;
+; -5.909 ; scctrl:scctrl|cState.LDK                  ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[28] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.576      ;
+; -5.902 ; scctrl:scctrl|cState.LDK                  ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.569      ;
+; -5.890 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[8]  ; scdp:scdp|regrce:lsBitsi|q[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.557      ;
+; -5.874 ; scctrl:scctrl|cState.LDK                  ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[24] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.541      ;
+; -5.873 ; scctrl:scctrl|cState.LDK                  ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.540      ;
+; -5.854 ; scctrl:scctrl|cState.LDK                  ; scctrl:scctrl|cState.START                ; clk          ; clk         ; 1.000        ; 0.000      ; 6.521      ;
+; -5.829 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[28] ; scdp:scdp|regrce:msBitsi|q[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.496      ;
+; -5.811 ; scctrl:scctrl|cState.LDK                  ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.478      ;
+; -5.810 ; scctrl:scctrl|cState.LDK                  ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.477      ;
+; -5.809 ; scctrl:scctrl|cState.LDK                  ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.476      ;
+; -5.806 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[25] ; scdp:scdp|regrce:lsBitsi|q[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.473      ;
+; -5.804 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[21] ; scdp:scdp|regrce:msBitsi|q[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.471      ;
+; -5.797 ; scctrl:scctrl|cState.LDK                  ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[20] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.464      ;
+; -5.797 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[9]  ; scdp:scdp|regrce:lsBitsi|q[0]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.464      ;
+; -5.796 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[9]  ; scdp:scdp|regrce:lsBitsi|q[3]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.463      ;
+; -5.795 ; scctrl:scctrl|cState.LDK                  ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[25] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.462      ;
+; -5.794 ; scctrl:scctrl|cState.LDK                  ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[17] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.461      ;
+; -5.751 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[21] ; scdp:scdp|regrce:msBitsi|q[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.418      ;
+; -5.700 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[16] ; scdp:scdp|regrce:lsBitsi|q[0]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.367      ;
+; -5.690 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[5]  ; scdp:scdp|regrce:msBitsi|q[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.357      ;
+; -5.686 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[1]  ; scdp:scdp|regrce:lsBitsi|q[4]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.353      ;
+; -5.672 ; scctrl:scctrl|cState.START                ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.339      ;
+; -5.665 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[13] ; scdp:scdp|regrce:msBitsi|q[4]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.332      ;
+; -5.663 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[13] ; scdp:scdp|regrce:msBitsi|q[6]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.330      ;
+; -5.650 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[29] ; scdp:scdp|regrce:msBitsi|q[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.317      ;
+; -5.645 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[6]  ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.312      ;
+; -5.643 ; scctrl:scctrl|cState.LDK                  ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[16] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.310      ;
+; -5.642 ; scctrl:scctrl|cState.LDK                  ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[23] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.309      ;
+; -5.641 ; scctrl:scctrl|cState.LDK                  ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[15] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.308      ;
+; -5.638 ; scctrl:scctrl|cState.LDK                  ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[21] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.305      ;
+; -5.637 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[5]  ; scdp:scdp|regrce:msBitsi|q[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.304      ;
+; -5.632 ; scctrl:scctrl|cState.LDK                  ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[29] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.299      ;
+; -5.632 ; scctrl:scctrl|cState.LDK                  ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.299      ;
+; -5.629 ; scctrl:scctrl|cState.LDK                  ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.296      ;
+; -5.628 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[9]  ; scdp:scdp|regrce:lsBitsi|q[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.295      ;
+; -5.624 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[24] ; scdp:scdp|regrce:lsBitsi|q[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.291      ;
+; -5.623 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[12] ; scdp:scdp|regrce:msBitsi|q[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.290      ;
+; -5.597 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[29] ; scdp:scdp|regrce:msBitsi|q[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.264      ;
+; -5.595 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[24] ; scdp:scdp|regrce:lsBitsi|q[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.262      ;
+; -5.566 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[2]  ; scdp:scdp|regrce:lsBitsi|q[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.233      ;
+; -5.546 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[25] ; scdp:scdp|regrce:lsBitsi|q[4]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.213      ;
+; -5.535 ; scctrl:scctrl|cState.START                ; scctrl:scctrl|cKey.K3l                    ; clk          ; clk         ; 1.000        ; 0.000      ; 6.202      ;
+; -5.532 ; scctrl:scctrl|cState.LDK                  ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[18] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.199      ;
+; -5.524 ; scctrl:scctrl|cState.LDK                  ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.191      ;
+; -5.519 ; scctrl:scctrl|cState.LDK                  ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.186      ;
+; -5.518 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[20] ; scdp:scdp|regrce:msBitsi|q[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.185      ;
+; -5.506 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[21] ; scdp:scdp|regrce:msBitsi|q[4]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.173      ;
+; -5.504 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[21] ; scdp:scdp|regrce:msBitsi|q[6]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.171      ;
+; -5.471 ; scctrl:scctrl|cState.LDK                  ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[22] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.138      ;
+; -5.466 ; scctrl:scctrl|cState.LDK                  ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.133      ;
+; -5.464 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[14] ; scdp:scdp|regrce:msBitsi|q[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.131      ;
+; -5.461 ; scctrl:scctrl|cState.LDK                  ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[30] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.128      ;
+; -5.449 ; scctrl:scctrl|cState.START                ; scctrl:scctrl|cKey.K2h                    ; clk          ; clk         ; 1.000        ; 0.000      ; 6.116      ;
+; -5.449 ; scctrl:scctrl|cState.START                ; scctrl:scctrl|cKey.K0h                    ; clk          ; clk         ; 1.000        ; 0.000      ; 6.116      ;
+; -5.447 ; scctrl:scctrl|cState.START                ; scctrl:scctrl|cKey.K1l                    ; clk          ; clk         ; 1.000        ; 0.000      ; 6.114      ;
+; -5.439 ; scctrl:scctrl|cState.START                ; scctrl:scctrl|cKey.K2l                    ; clk          ; clk         ; 1.000        ; 0.000      ; 6.106      ;
+; -5.436 ; scctrl:scctrl|cState.START                ; scctrl:scctrl|cKey.K1h                    ; clk          ; clk         ; 1.000        ; 0.000      ; 6.103      ;
+; -5.435 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[14] ; scdp:scdp|regrce:msBitsi|q[0]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.102      ;
+; -5.434 ; scctrl:scctrl|cState.START                ; scctrl:scctrl|cKey.K0l                    ; clk          ; clk         ; 1.000        ; 0.000      ; 6.101      ;
+; -5.429 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[7]  ; scdp:scdp|regrce:msBitsi|q[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.096      ;
+; -5.427 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[17] ; scdp:scdp|regrce:lsBitsi|q[0]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.094      ;
+; -5.426 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[17] ; scdp:scdp|regrce:lsBitsi|q[3]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.093      ;
+; -5.417 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[2]  ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.084      ;
+; -5.412 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[11] ; scdp:scdp|regrce:lsBitsi|q[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.079      ;
+; -5.407 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[10] ; scdp:scdp|regrce:lsBitsi|q[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.074      ;
+; -5.404 ; scctrl:scctrl|cState.LDK                  ; scctrl:scctrl|cKey.K3l                    ; clk          ; clk         ; 1.000        ; 0.000      ; 6.071      ;
+; -5.403 ; scctrl:scctrl|cState.START                ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.070      ;
+; -5.403 ; scctrl:scctrl|cState.START                ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[20] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.070      ;
+; -5.403 ; scctrl:scctrl|cState.START                ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[25] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.070      ;
+; -5.403 ; scctrl:scctrl|cState.START                ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[17] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.070      ;
+; -5.403 ; scctrl:scctrl|cState.START                ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.070      ;
+; -5.403 ; scctrl:scctrl|cState.START                ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.070      ;
+; -5.396 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[12] ; scdp:scdp|regrce:msBitsi|q[0]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.063      ;
+; -5.392 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[5]  ; scdp:scdp|regrce:msBitsi|q[4]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.059      ;
+; -5.390 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[5]  ; scdp:scdp|regrce:msBitsi|q[6]             ; clk          ; clk         ; 1.000        ; 0.000      ; 6.057      ;
+; -5.387 ; scctrl:scctrl|cState.LDK                  ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.054      ;
+; -5.386 ; scctrl:scctrl|cState.LDK                  ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[27] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.053      ;
+; -5.384 ; scctrl:scctrl|cState.LDK                  ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[19] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.051      ;
+; -5.378 ; scctrl:scctrl|cState.START                ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[22] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.045      ;
+; -5.378 ; scctrl:scctrl|cState.START                ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[30] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.045      ;
+; -5.378 ; scctrl:scctrl|cState.START                ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.045      ;
++--------+-------------------------------------------+-------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clk'                                                                                                                                                         ;
++-------+-------------------------------------------+-------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                 ; To Node                                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------------+-------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 1.385 ; scdp:scdp|regrce:msBitsi|q[1]             ; scdp:scdp|regrce:msBitsi|q[1]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.606      ;
+; 1.670 ; scdp:scdp|regrce:lsBitsi|q[5]             ; scdp:scdp|regrce:lsBitsi|q[5]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.891      ;
+; 1.698 ; scctrl:scctrl|cState.LDMSBIT              ; scctrl:scctrl|cState.LDLSBIT              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.919      ;
+; 1.798 ; scdp:scdp|regrce:rxdataD|q[0]             ; scdp:scdp|regrce:k1l|q[0]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 2.019      ;
+; 1.802 ; scdp:scdp|regrce:rxdataD|q[3]             ; scdp:scdp|regrce:k1l|q[3]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 2.023      ;
+; 1.937 ; scctrl:scctrl|cState.LDBYTE               ; scdp:scdp|regrce:lsBitsi|q[5]             ; clk          ; clk         ; 0.000        ; 0.000      ; 2.158      ;
+; 1.957 ; scctrl:scctrl|cKey.K0l                    ; scctrl:scctrl|cState.PTK                  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.178      ;
+; 1.957 ; scctrl:scctrl|cKey.K3l                    ; scctrl:scctrl|regrce:ldk|q[6]             ; clk          ; clk         ; 0.000        ; 0.000      ; 2.178      ;
+; 2.104 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[28] ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[29] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.325      ;
+; 2.107 ; scctrl:scctrl|cKey.K2h                    ; scctrl:scctrl|cKey.K2h                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.328      ;
+; 2.127 ; scdp:scdp|regrce:lsBitsi|q[2]             ; scdp:scdp|regrce:lsBitsi|q[2]             ; clk          ; clk         ; 0.000        ; 0.000      ; 2.348      ;
+; 2.128 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[15] ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[16] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.349      ;
+; 2.130 ; scctrl:scctrl|cState.PTK                  ; scctrl:scctrl|cState.PTK                  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.351      ;
+; 2.134 ; scdp:scdp|regrce:lsBitsi|q[3]             ; scdp:scdp|regrce:lsBitsi|q[3]             ; clk          ; clk         ; 0.000        ; 0.000      ; 2.355      ;
+; 2.144 ; scdp:scdp|regrce:msBitsi|q[2]             ; scdp:scdp|regrce:msBitsi|q[2]             ; clk          ; clk         ; 0.000        ; 0.000      ; 2.365      ;
+; 2.162 ; scctrl:scctrl|cState.START                ; scctrl:scctrl|cState.LDK                  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.383      ;
+; 2.165 ; scctrl:scctrl|cState.DEC                  ; scctrl:scctrl|cState.DEC                  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.386      ;
+; 2.212 ; scctrl:scctrl|cState.NB2                  ; scctrl:scctrl|cState.DEC                  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.433      ;
+; 2.221 ; scctrl:scctrl|cKey.KOF                    ; scctrl:scctrl|cKey.KOF                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.442      ;
+; 2.259 ; scctrl:scctrl|cKey.K0l                    ; scctrl:scctrl|cKey.K0l                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.480      ;
+; 2.259 ; scctrl:scctrl|cKey.K3l                    ; scctrl:scctrl|cKey.K3l                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.480      ;
+; 2.261 ; scctrl:scctrl|cKey.K1l                    ; scctrl:scctrl|cKey.K1l                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.482      ;
+; 2.264 ; scctrl:scctrl|cKey.K1l                    ; scctrl:scctrl|cKey.K0h                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.485      ;
+; 2.345 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[4]  ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.566      ;
+; 2.361 ; scctrl:scctrl|cState.PTLFSR               ; scctrl:scctrl|cState.PTLFSR               ; clk          ; clk         ; 0.000        ; 0.000      ; 2.582      ;
+; 2.361 ; scctrl:scctrl|cState.ENC                  ; scctrl:scctrl|cState.ENC                  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.582      ;
+; 2.508 ; scdp:scdp|regrce:k0l|q[0]                 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.729      ;
+; 2.538 ; scdp:scdp|regrce:k3l|q[0]                 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[24] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.759      ;
+; 2.557 ; scdp:scdp|regrce:lsBitsi|q[1]             ; scdp:scdp|regrce:lsBitsi|q[1]             ; clk          ; clk         ; 0.000        ; 0.000      ; 2.778      ;
+; 2.581 ; scctrl:scctrl|cKey.K0h                    ; scctrl:scctrl|cKey.K0h                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.802      ;
+; 2.591 ; scctrl:scctrl|cKey.K0h                    ; scctrl:scctrl|cKey.K0l                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.812      ;
+; 2.673 ; scctrl:scctrl|cKey.K2h                    ; scctrl:scctrl|cKey.K2l                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.894      ;
+; 2.694 ; scdp:scdp|regrce:u2|q[3]                  ; scdp:scdp|regrce:lsBitsi|q[1]             ; clk          ; clk         ; 0.000        ; 0.000      ; 2.915      ;
+; 2.747 ; scctrl:scctrl|cState.LDK                  ; scctrl:scctrl|cState.LDK                  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.968      ;
+; 2.817 ; scctrl:scctrl|cKey.K2l                    ; scctrl:scctrl|cKey.K2l                    ; clk          ; clk         ; 0.000        ; 0.000      ; 3.038      ;
+; 2.878 ; scctrl:scctrl|cKey.K2h                    ; scctrl:scctrl|regrce:ldk|q[5]             ; clk          ; clk         ; 0.000        ; 0.000      ; 3.099      ;
+; 2.925 ; scdp:scdp|regrce:k1h|q[3]                 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.146      ;
+; 2.942 ; scctrl:scctrl|cState.NB1                  ; scctrl:scctrl|cState.NB1                  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.163      ;
+; 2.982 ; scdp:scdp|regrce:rxdataD|q[1]             ; scdp:scdp|regrce:k0h|q[1]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 3.203      ;
+; 2.990 ; scctrl:scctrl|cState.LDEBIT               ; scctrl:scctrl|cState.LDMSBIT              ; clk          ; clk         ; 0.000        ; 0.000      ; 3.211      ;
+; 2.990 ; scdp:scdp|regrce:rxdataD|q[3]             ; scdp:scdp|regrce:k3h|q[3]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 3.211      ;
+; 2.998 ; scdp:scdp|regrce:rxdataD|q[2]             ; scdp:scdp|regrce:k2h|q[2]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 3.219      ;
+; 2.998 ; scdp:scdp|regrce:msBitsi|q[3]             ; scdp:scdp|regrce:msBitsi|q[3]             ; clk          ; clk         ; 0.000        ; 0.000      ; 3.219      ;
+; 3.000 ; scdp:scdp|regrce:rxdataD|q[0]             ; scdp:scdp|regrce:k3h|q[0]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 3.221      ;
+; 3.024 ; scctrl:scctrl|cKey.K1l                    ; scctrl:scctrl|regrce:ldk|q[2]             ; clk          ; clk         ; 0.000        ; 0.000      ; 3.245      ;
+; 3.027 ; scdp:scdp|regrce:rxdataD|q[2]             ; scdp:scdp|regrce:k2l|q[2]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 3.248      ;
+; 3.037 ; scdp:scdp|regrce:rxdataD|q[2]             ; scdp:scdp|regrce:k1h|q[2]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 3.258      ;
+; 3.041 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[23] ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[24] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.262      ;
+; 3.057 ; scdp:scdp|regrce:rxdataD|q[1]             ; scdp:scdp|regrce:k2l|q[1]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 3.278      ;
+; 3.058 ; scdp:scdp|regrce:rxdataD|q[1]             ; scdp:scdp|regrce:k1h|q[1]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 3.279      ;
+; 3.060 ; scdp:scdp|regrce:rxdataD|q[1]             ; scdp:scdp|regrce:k3l|q[1]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 3.281      ;
+; 3.078 ; scdp:scdp|regrce:rxdataD|q[2]             ; scdp:scdp|regrce:k3h|q[2]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 3.299      ;
+; 3.084 ; scctrl:scctrl|cKey.K3h                    ; scctrl:scctrl|cKey.K3h                    ; clk          ; clk         ; 0.000        ; 0.000      ; 3.305      ;
+; 3.093 ; scctrl:scctrl|cState.LDBYTE               ; scctrl:scctrl|cState.LDEBIT               ; clk          ; clk         ; 0.000        ; 0.000      ; 3.314      ;
+; 3.094 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[5]  ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.315      ;
+; 3.120 ; scdp:scdp|regrce:k0l|q[2]                 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.341      ;
+; 3.163 ; scctrl:scctrl|regrce:ldk|q[6]             ; scdp:scdp|regrce:k3l|q[2]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 3.384      ;
+; 3.163 ; scctrl:scctrl|regrce:ldk|q[6]             ; scdp:scdp|regrce:k3l|q[1]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 3.384      ;
+; 3.163 ; scctrl:scctrl|regrce:ldk|q[6]             ; scdp:scdp|regrce:k3l|q[3]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 3.384      ;
+; 3.163 ; scctrl:scctrl|regrce:ldk|q[6]             ; scdp:scdp|regrce:k3l|q[0]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 3.384      ;
+; 3.183 ; scdp:scdp|regrce:k2h|q[0]                 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[20] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.404      ;
+; 3.192 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[14] ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.413      ;
+; 3.224 ; scdp:scdp|regrce:u2|q[3]                  ; scdp:scdp|regrce:lsBitsi|q[4]             ; clk          ; clk         ; 0.000        ; 0.000      ; 3.445      ;
+; 3.233 ; scdp:scdp|regrce:u2|q[3]                  ; scdp:scdp|regrce:lsBitsi|q[6]             ; clk          ; clk         ; 0.000        ; 0.000      ; 3.454      ;
+; 3.237 ; scdp:scdp|regrce:k2l|q[1]                 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[17] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.458      ;
+; 3.241 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[13] ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.462      ;
+; 3.246 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[9]  ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.467      ;
+; 3.250 ; scctrl:scctrl|cKey.K0l                    ; scctrl:scctrl|cKey.K3h                    ; clk          ; clk         ; 0.000        ; 0.000      ; 3.471      ;
+; 3.269 ; scctrl:scctrl|cKey.K3h                    ; scctrl:scctrl|cKey.K3l                    ; clk          ; clk         ; 0.000        ; 0.000      ; 3.490      ;
+; 3.274 ; scctrl:scctrl|cState.PTB                  ; scctrl:scctrl|cState.PTB                  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.495      ;
+; 3.292 ; scdp:scdp|regrce:k3l|q[2]                 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[26] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.513      ;
+; 3.294 ; scctrl:scctrl|cState.START                ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.515      ;
+; 3.301 ; scctrl:scctrl|cState.DEC                  ; scctrl:scctrl|cState.NB1                  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.522      ;
+; 3.303 ; scctrl:scctrl|cState.START                ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[28] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.524      ;
+; 3.305 ; scctrl:scctrl|cState.START                ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[26] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.526      ;
+; 3.311 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[24] ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[25] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.532      ;
+; 3.314 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[1]  ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.535      ;
+; 3.334 ; scctrl:scctrl|cState.NB1                  ; scctrl:scctrl|cState.NB2                  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.555      ;
+; 3.343 ; scctrl:scctrl|cKey.K0h                    ; scctrl:scctrl|regrce:ldk|q[1]             ; clk          ; clk         ; 0.000        ; 0.000      ; 3.564      ;
+; 3.351 ; scctrl:scctrl|cKey.K2l                    ; scctrl:scctrl|cKey.K1h                    ; clk          ; clk         ; 0.000        ; 0.000      ; 3.572      ;
+; 3.353 ; scdp:scdp|regrce:k1h|q[1]                 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.574      ;
+; 3.355 ; scctrl:scctrl|cKey.K3l                    ; scctrl:scctrl|cKey.K2h                    ; clk          ; clk         ; 0.000        ; 0.000      ; 3.576      ;
+; 3.363 ; scdp:scdp|regrce:k2l|q[0]                 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[16] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.584      ;
+; 3.366 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[0]  ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.587      ;
+; 3.371 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[0]  ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.592      ;
+; 3.379 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[17] ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[18] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.600      ;
+; 3.383 ; scdp:scdp|regrce:rxdataD|q[1]             ; scdp:scdp|regrce:k3h|q[1]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 3.604      ;
+; 3.429 ; scdp:scdp|regrce:u2|q[3]                  ; scdp:scdp|regrce:lsBitsi|q[2]             ; clk          ; clk         ; 0.000        ; 0.000      ; 3.650      ;
+; 3.441 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[18] ; scdp:scdp|regrce:lsBitsi|q[6]             ; clk          ; clk         ; 0.000        ; 0.000      ; 3.662      ;
+; 3.461 ; scdp:scdp|regrce:u2|q[4]                  ; scdp:scdp|regrce:msBitsi|q[0]             ; clk          ; clk         ; 0.000        ; 0.000      ; 3.682      ;
+; 3.490 ; scctrl:scctrl|cState.PTK                  ; scctrl:scctrl|cKey.KOF                    ; clk          ; clk         ; 0.000        ; 0.000      ; 3.711      ;
+; 3.512 ; scdp:scdp|regrce:k1h|q[0]                 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.733      ;
+; 3.519 ; scctrl:scctrl|cState.LDK                  ; scctrl:scctrl|regrce:ldk|q[0]             ; clk          ; clk         ; 0.000        ; 0.000      ; 3.740      ;
+; 3.524 ; scctrl:scctrl|cState.LDK                  ; scctrl:scctrl|regrce:ldk|q[5]             ; clk          ; clk         ; 0.000        ; 0.000      ; 3.745      ;
+; 3.543 ; scdp:scdp|regrce:k3l|q[3]                 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[27] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.764      ;
+; 3.564 ; scctrl:scctrl|cState.LDK                  ; scctrl:scctrl|regrce:ldk|q[6]             ; clk          ; clk         ; 0.000        ; 0.000      ; 3.785      ;
+; 3.600 ; scdp:scdp|regrce:u2|q[1]                  ; scdp:scdp|regrce:lsBitsi|q[6]             ; clk          ; clk         ; 0.000        ; 0.000      ; 3.821      ;
+; 3.612 ; scctrl:scctrl|cKey.K0l                    ; scctrl:scctrl|cKey.KOF                    ; clk          ; clk         ; 0.000        ; 0.000      ; 3.833      ;
+; 3.614 ; scdp:scdp|lfsr:lfsrInst|regrce:lfsr|q[10] ; scdp:scdp|regrce:lsBitsi|q[6]             ; clk          ; clk         ; 0.000        ; 0.000      ; 3.835      ;
+; 3.616 ; scctrl:scctrl|cState.LDBYTE               ; scdp:scdp|regrce:lsBitsi|q[3]             ; clk          ; clk         ; 0.000        ; 0.000      ; 3.837      ;
++-------+-------------------------------------------+-------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 730      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 730      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 10    ; 10   ;
+; Unconstrained Input Port Paths  ; 889   ; 889  ;
+; Unconstrained Output Ports      ; 9     ; 9    ;
+; Unconstrained Output Port Paths ; 642   ; 642  ;
++---------------------------------+-------+------+
+
+
++-------------------------------------+
+; Clock Status Summary                ;
++--------+-------+------+-------------+
+; Target ; Clock ; Type ; Status      ;
++--------+-------+------+-------------+
+; clk    ; clk   ; Base ; Constrained ;
++--------+-------+------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                             ;
++----------------+--------------------------------------------------------------------------------------+
+; Input Port     ; Comment                                                                              ;
++----------------+--------------------------------------------------------------------------------------+
+; bu_rx_data[0]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; bu_rx_data[1]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; bu_rx_data[2]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; bu_rx_data[3]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; bu_rx_data[4]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; bu_rx_data[5]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; bu_rx_data[6]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; bu_rx_data[7]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; bu_rx_data_rdy ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; rst            ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++----------------+--------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                             ;
++----------------+---------------------------------------------------------------------------------------+
+; Output Port    ; Comment                                                                               ;
++----------------+---------------------------------------------------------------------------------------+
+; L4_PrintBuf    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; L4_tx_data[0]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; L4_tx_data[1]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; L4_tx_data[2]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; L4_tx_data[3]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; L4_tx_data[4]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; L4_tx_data[5]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; L4_tx_data[6]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; L4_tx_data_rdy ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++----------------+---------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                             ;
++----------------+--------------------------------------------------------------------------------------+
+; Input Port     ; Comment                                                                              ;
++----------------+--------------------------------------------------------------------------------------+
+; bu_rx_data[0]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; bu_rx_data[1]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; bu_rx_data[2]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; bu_rx_data[3]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; bu_rx_data[4]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; bu_rx_data[5]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; bu_rx_data[6]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; bu_rx_data[7]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; bu_rx_data_rdy ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; rst            ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++----------------+--------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                             ;
++----------------+---------------------------------------------------------------------------------------+
+; Output Port    ; Comment                                                                               ;
++----------------+---------------------------------------------------------------------------------------+
+; L4_PrintBuf    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; L4_tx_data[0]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; L4_tx_data[1]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; L4_tx_data[2]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; L4_tx_data[3]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; L4_tx_data[4]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; L4_tx_data[5]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; L4_tx_data[6]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; L4_tx_data_rdy ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++----------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Wed Jun 05 03:30:13 2019
+Info: Command: quartus_sta lab4 -c lab4
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20029): Only one processor detected - disabling parallel compilation
+Info (21077): Low junction temperature is -40 degrees C
+Info (21077): High junction temperature is 125 degrees C
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'lab4.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -6.603
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -6.603            -571.485 clk 
+Info (332146): Worst-case hold slack is 1.385
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     1.385               0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 506 megabytes
+    Info: Processing ended: Wed Jun 05 03:30:15 2019
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

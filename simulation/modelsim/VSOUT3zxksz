@@ -1,0 +1,43 @@
+vsim work.top_sft 
+Start time: 12:04:45 on Jun 02,2019
+Loading work.top_sft
+Loading work.latticehx1k
+Loading work.latticehx1k_pll
+** Error: (vsim-3033) D:/PhotonUser/Lab/junkai/cse140l/Lab4/latticehx1k.v(284): Instantiation of 'SB_PLL40_CORE' failed. The design unit was not found.
+   Time: 0 ps  Iteration: 0  Instance: /top_sft/latticehx1k/latticehx1k_pll_inst File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/latticehx1k.v
+        Searched libraries:
+            D:/PhotonUser/Lab/junkai/cse140l/Lab4/simulation/modelsim/rtl_work
+Loading work.inpin
+** Error: (vsim-3033) D:/PhotonUser/Lab/junkai/cse140l/Lab4/latticehx1k.v(47): Instantiation of 'SB_IO' failed. The design unit was not found.
+   Time: 0 ps  Iteration: 0  Instance: /top_sft/latticehx1k/_rcxd File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/latticehx1k.v
+        Searched libraries:
+            D:/PhotonUser/Lab/junkai/cse140l/Lab4/simulation/modelsim/rtl_work
+Loading work.uartTxBuf
+Loading work.fifo
+Loading work.tx_fsm
+Loading work.emitcrlf_fsm
+** Error: (vsim-3033) D:/PhotonUser/Lab/junkai/cse140l/Lab4/latticehx1k.v(191): Instantiation of 'buart' failed. The design unit was not found.
+   Time: 0 ps  Iteration: 0  Instance: /top_sft/latticehx1k File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/latticehx1k.v
+        Searched libraries:
+            D:/PhotonUser/Lab/junkai/cse140l/Lab4/simulation/modelsim/rtl_work
+Loading work.resetGen
+Loading work.N_bit_counter
+Loading work.Lab4_140L
+Loading work.scdp
+Loading work.asciiHex2Bin
+Loading work.regrce
+Loading work.printable
+Loading work.bin2AsciiHex
+Loading work.lfsr
+Loading work.decodeKeysL4
+Loading work.scctrl
+Loading work.tb_sft
+End time: 12:04:46 on Jun 02,2019, Elapsed time: 0:00:01
+Errors: 3, Warnings: 0
+vsim work.tb_sft 
+Start time: 12:04:47 on Jun 02,2019
+Loading work.tb_sft
+** Error: (vsim-3043) D:/PhotonUser/Lab/junkai/cse140l/Lab4/tb_sft.v(144): Unresolved reference to 'top_sft'.
+   Time: 0 ps  Iteration: 0  Instance: /tb_sft File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/tb_sft.v
+End time: 12:04:48 on Jun 02,2019, Elapsed time: 0:00:01
+Errors: 1, Warnings: 0

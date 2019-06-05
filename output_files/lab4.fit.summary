@@ -1,0 +1,11 @@
+Fitter Status : Successful - Wed Jun 05 03:30:09 2019
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : lab4
+Top-level Entity Name : Lab4_140L
+Family : MAX V
+Device : 5M2210ZF324I5
+Timing Models : Final
+Total logic elements : 272 / 2,210 ( 12 % )
+Total pins : 26 / 271 ( 10 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

@@ -1,0 +1,6 @@
+Info (10281): Verilog HDL Declaration information at uarttxbuf.v(175): object "emitcr" differs only in case from object "EMITCR" in the same scope File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/uarttxbuf.v Line: 175
+Info (10281): Verilog HDL Declaration information at uarttxbuf.v(176): object "emitlf" differs only in case from object "EMITLF" in the same scope File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/uarttxbuf.v Line: 176
+Info (10281): Verilog HDL Declaration information at Lab4_140L.v(323): object "ENC" differs only in case from object "enc" in the same scope File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v Line: 323
+Info (10281): Verilog HDL Declaration information at Lab4_140L.v(323): object "LDBYTE" differs only in case from object "ldbyte" in the same scope File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v Line: 323
+Info (10281): Verilog HDL Declaration information at Lab4_140L.v(323): object "DEC" differs only in case from object "dec" in the same scope File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v Line: 323
+Info (10281): Verilog HDL Declaration information at Lab4_140L.v(324): object "LDK" differs only in case from object "ldk" in the same scope File: D:/PhotonUser/Lab/junkai/cse140l/Lab4/Lab4_140L.v Line: 324

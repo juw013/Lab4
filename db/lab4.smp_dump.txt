@@ -1,0 +1,28 @@
+
+State Machine - |Lab4_140L|scctrl:scctrl|cKey
+Name cKey.K0l cKey.K0h cKey.K1l cKey.K1h cKey.K2l cKey.K2h cKey.K3l cKey.K3h cKey.KOF 
+cKey.K3h 0 0 0 0 0 0 0 0 0 
+cKey.K3l 0 0 0 0 0 0 1 1 0 
+cKey.K2h 0 0 0 0 0 1 0 1 0 
+cKey.K2l 0 0 0 0 1 0 0 1 0 
+cKey.K1h 0 0 0 1 0 0 0 1 0 
+cKey.K1l 0 0 1 0 0 0 0 1 0 
+cKey.K0h 0 1 0 0 0 0 0 1 0 
+cKey.K0l 1 0 0 0 0 0 0 1 0 
+cKey.KOF 0 0 0 0 0 0 0 1 1 
+
+State Machine - |Lab4_140L|scctrl:scctrl|cState
+Name cState.PTB cState.PTLFSR cState.PTK cState.LDK cState.NB2 cState.NB1 cState.DEC cState.LDLSBIT cState.LDMSBIT cState.LDEBIT cState.LDBYTE cState.ENC cState.START 
+cState.START 0 0 0 0 0 0 0 0 0 0 0 0 0 
+cState.ENC 0 0 0 0 0 0 0 0 0 0 0 1 1 
+cState.LDBYTE 0 0 0 0 0 0 0 0 0 0 1 0 1 
+cState.LDEBIT 0 0 0 0 0 0 0 0 0 1 0 0 1 
+cState.LDMSBIT 0 0 0 0 0 0 0 0 1 0 0 0 1 
+cState.LDLSBIT 0 0 0 0 0 0 0 1 0 0 0 0 1 
+cState.DEC 0 0 0 0 0 0 1 0 0 0 0 0 1 
+cState.NB1 0 0 0 0 0 1 0 0 0 0 0 0 1 
+cState.NB2 0 0 0 0 1 0 0 0 0 0 0 0 1 
+cState.LDK 0 0 0 1 0 0 0 0 0 0 0 0 1 
+cState.PTK 0 0 1 0 0 0 0 0 0 0 0 0 1 
+cState.PTLFSR 0 1 0 0 0 0 0 0 0 0 0 0 1 
+cState.PTB 1 0 0 0 0 0 0 0 0 0 0 0 1 
